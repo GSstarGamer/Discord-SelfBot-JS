@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node ./start-bot.js"
+  },
   "dependencies": {
     "@discordjs/voice": "^0.14.0",
     "discord.js-selfbot-v13": "^2.9.19",
