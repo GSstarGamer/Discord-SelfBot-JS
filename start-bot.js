@@ -2,6 +2,8 @@ console.clear()
 const Discord = require('discord.js-selfbot-v13')
 const config = require('./config.json')
 const logger = require('./functions/logger.js')
+const notify = require('./functions/notification.js')
+
 require('dotenv').config()
 
 const client = new Discord.Client({
@@ -25,7 +27,8 @@ handlers.forEach(handler => {
 client.logger.log('Logging in...')
 client.on('ready', async () => {
     console.clear()
-    client.logger.success(`Bot is loaded. Logged in as ${client.user.username}`)
+    notify(`Bot is loaded. Logged in as ${client.user.username}`)
+    client.logger.success(`${client.name} is loaded. Logged in as ${client.user.username}`)
 })
 
 client.login(process.env.TOKEN);
