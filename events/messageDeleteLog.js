@@ -13,6 +13,7 @@ module.exports = {
      * @param {Discord} Discord
      */
     async execute(message, client, Discord) {
+        if (!config['Delete Message Logger']['Enabled']) return
         try {
         if (message.channel.type == 'DM') {
             if (message.author.id == client.user.id) return
