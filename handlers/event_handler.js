@@ -9,5 +9,6 @@ module.exports = (client, Discord) => {
         } else {
             client.on(event.name, (...args) => event.execute(...args, client, Discord));
         }
+        client.logger.debug(`Loaded event ${eventFile}`)
     }
 }

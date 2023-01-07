@@ -6,8 +6,9 @@ module.exports = (client, Discord) => {
         const command = require(`../commands/${commandFile}`);
         if (command.name) {
             client.commands.set(command.name, command);
+            client.logger.debug(`Loaded command ${commandFile}`)
         } else {
-            console.log(`${commandFile} does not have name`)
+            client.logger.warn(`${commandFile} does not have name`)
         }
     }
 };
