@@ -31,9 +31,7 @@ module.exports = {
                 notify(`${message.author.username} tried to do the ${command.name} command.`)
                 return
             } catch (error) {
-                notify(`${message.author.username} tried to do ${message.content.slice(prefix.length)}`)
                 return
-
             }
         }
 

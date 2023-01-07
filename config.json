@@ -1,4 +1,9 @@
 {
     "SelfBot Name": "SelfBot",
-    "Prefix": ";"
+    "Prefix": ";",
+
+    "Delete Message Logger": {
+        "Enabled": false,
+        "Log Channel ID": "1038015439919382538"
+    }
 }

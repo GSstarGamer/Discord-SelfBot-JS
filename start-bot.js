@@ -17,6 +17,8 @@ client.events = new Discord.Collection();
 client.prefix = config['Prefix']
 client.name = config['SelfBot Name']
 client.logger = logger
+client.dellist = null
+client.dellog = ''
 
 const handlers = ['command_handler', 'event_handler']
 handlers.forEach(handler => {

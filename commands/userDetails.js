@@ -13,13 +13,13 @@ module.exports = {
     async execute(client, message, Discord, extra) {
         notifier.notify(
             {
-                title: 'Self Bot',
+                title: client.name,
                 message: 'Are you sure?',
                 wait: true
             },
             async function (err, response, metadata) {
                 if (response == 'activate'){
-                    const user = await client.users.fetch(extra['args'][0])
+                    const user = await client.users.fetch(extra['args'][0].replace('<@', '').replace('>', ''))
                     const profile = await user.getProfile()
                     delete profile.connectedAccounts;
                     delete profile.mutualGuilds;
