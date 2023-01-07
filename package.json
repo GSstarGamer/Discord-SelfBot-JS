@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node ./start-bot.js",
-    "update": "git pull origin main"
+    "update": "git update-index --assume-unchanged config.json && git pull origin main"
   },
   "dependencies": {
     "@discordjs/voice": "^0.14.0",
