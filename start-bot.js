@@ -30,7 +30,7 @@ handlers.forEach(handler => {
 
 client.logger.log('Logging in...')
 client.on('ready', async () => {
-    
+
     console.clear()
 
     client.logger.debug('Checking for update...')
@@ -43,7 +43,7 @@ client.on('ready', async () => {
         } else {
             client.logger.log('Updating...')
             os.execCommand('npm run update').then(res => {
-                client.logger.success('Finished updating. Please re-run')                
+                client.logger.success('Finished updating. Please re-run')
                 process.exit()
             }).catch(err => {
                 console.log("os >>>", err);

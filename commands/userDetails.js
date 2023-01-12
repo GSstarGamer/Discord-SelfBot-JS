@@ -18,13 +18,13 @@ module.exports = {
                 wait: true
             },
             async function (err, response, metadata) {
-                if (response == 'activate'){
+                if (response == 'activate') {
                     const user = await client.users.fetch(extra['args'][0].replace('<@', '').replace('>', ''))
                     const profile = await user.getProfile()
                     delete profile.connectedAccounts;
                     delete profile.mutualGuilds;
                     delete profile.friendNicknames;
-                    message.channel.send(`\`\`\`json\n${prettier.format(JSON.stringify(profile),{ semi: false, parser: "json" })}\n\`\`\``)
+                    message.channel.send(`\`\`\`json\n${prettier.format(JSON.stringify(profile), { semi: false, parser: "json" })}\n\`\`\``)
                 }
             }
         );
