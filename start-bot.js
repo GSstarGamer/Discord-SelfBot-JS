@@ -3,6 +3,8 @@ const Discord = require('discord.js-selfbot-v13')
 const config = require('./config.json')
 const logger = require('./functions/logger.js')
 const notify = require('./functions/notification.js')
+const gitRepoIsUpToDate = require('git-repo-is-up-to-date')
+const exec = require('child_process').exec;
 
 require('dotenv').config()
 
@@ -29,6 +31,21 @@ handlers.forEach(handler => {
 client.logger.log('Logging in...')
 client.on('ready', async () => {
     console.clear()
+
+    client.logger.debug('Checking for update...')
+    const result = await gitRepoIsUpToDate()
+    if (result.isUpToDate) {
+        client.logger.warn('Bot is not update to date :C, Would you like to update?')
+        const prom = prompt('Y/n')
+        if (prom.toLowerCase() == 'n') {
+            client.logger.log('Okay')
+        } else {
+            exec('npm run update')
+        }
+    } else {
+        client.logger.success('Up to date :D')
+    }
+
     notify(`Bot is loaded. Logged in as ${client.user.username}`)
     client.logger.success(`${client.name} is loaded. Logged in as ${client.user.username}`)
 })
