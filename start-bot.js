@@ -34,7 +34,7 @@ client.on('ready', async () => {
 
     client.logger.debug('Checking for update...')
     const result = await gitRepoIsUpToDate()
-    if (result.isUpToDate) {
+    if (!result.isUpToDate) {
         client.logger.warn('Bot is not update to date :C, Would you like to update?')
         const prom = prompt('Y/n')
         if (prom.toLowerCase() == 'n') {
