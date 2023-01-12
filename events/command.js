@@ -11,7 +11,7 @@ module.exports = {
         const stringsL = []
         for (word of message.content.slice(prefix.length).split(/ +/)) {
             if (word.startsWith('"') || word.endsWith('"') || word.startsWith("'") || word.endsWith("'")) {
-                const neword = word.replace('"', '').replace("'", '')
+                const neword = word.replaceAll('"', '').replaceAll("'", '')
                 stringsL.push(neword)
             } else { args.push(word) }
         }
@@ -40,6 +40,7 @@ module.exports = {
                 command.execute(client, message, Discord, extra)
                 await message.delete()
             } catch (err) {
+                await message.delete()
                 console.log(err)
                 notify('An error as occurred. Please check console')
             }
