@@ -1,4 +1,3 @@
-
 module.exports = function getTime() {
     let time = new Date();
     let hours = time.getHours();
@@ -6,7 +5,7 @@ module.exports = function getTime() {
     let seconds = time.getSeconds();
     let ampm;
 
-    ampm = hours > 12 ? (ampm = 'PM') : 'AM';
+    ampm = hours > 12 ? (ampm = "PM") : "AM";
 
     hours = hours > 12 ? hours - 12 : hours;
 
@@ -19,4 +18,4 @@ module.exports = function getTime() {
     time = `${hours}:${minutes}:${seconds} ${ampm}`;
 
     return time;
-}
+};

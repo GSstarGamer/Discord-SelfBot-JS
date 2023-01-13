@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const exec = require("child_process").exec;
 function os_func() {
     this.execCommand = function (cmd) {
         return new Promise((resolve, reject) => {
@@ -7,10 +7,10 @@ function os_func() {
                     reject(error);
                     return;
                 }
-                resolve(stdout)
+                resolve(stdout);
             });
-        })
-    }
+        });
+    };
 }
 
-module.exports = new os_func()
+module.exports = new os_func();
