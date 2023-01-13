@@ -10,21 +10,22 @@ module.exports = {
             extra["args"][0].replace("<@", "").replace(">", "")
         );
         
-        if (!extra["args"][1]) {
+        if (!extra["string"]) {
             const autoMessage = client.automsg.find(e => e.userID == extra["args"][0].replace("<@", "").replace(">", ""))
             const index = client.automsg.indexOf(autoMessage)
             if (index > -1) client.automsg.splice(index, 1);
             notify(`Removed ${user.username} from list`)
         } else {
+            msg = extra["string"]
             if (client.automsg.find(e => e.userID == extra["args"][0].replace("<@", "").replace(">", ""))) {
                 const autoMessage = client.automsg.find(e => e.userID == extra["args"][0].replace("<@", "").replace(">", ""))
-                autoMessage.todo = extra["args"][1]
-                notify(`Changed ${user.username}'s auto msg to msg: ${extra["args"][1]}`)
+                autoMessage.todo = msg
+                notify(`Changed ${user.username}'s auto msg to msg: ${msg}`)
             } else {
-                const automsg = new AutoMsgUser(user.id, extra["args"][1]);
+                const automsg = new AutoMsgUser(user.id, msg);
                 client.automsg.push(automsg);
                 notify(
-                    `Added ${user.username} to auto msg with msg: ${extra["args"][1]}`
+                    `Added ${user.username} to auto msg with msg: ${msg}`
                 );
             }
         }

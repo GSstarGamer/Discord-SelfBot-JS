@@ -59,13 +59,14 @@ module.exports = {
                 await message.delete();
                 notify("Invalid command");
             }
-        } else {
+        } else if (client.automsg.length>0) {
             const automessage = client.automsg.find(
                 (e) => e.userID == message.author.id
             );
             if (!automessage) return;
-
-            message.reply(automessage.todo);
+            if (!message.guild){
+                message.reply(automessage.todo);
+            }
         }
     },
 };
