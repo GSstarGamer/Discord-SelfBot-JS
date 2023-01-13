@@ -10,6 +10,7 @@ TOKEN=TOKENHERE
 ```
 
 Now replace `TOKENHERE` with your discord token (account token). Then save the file.
+And then rename the file to `.env`
 
 Then open the `config.json` file. Should look like this.
 
@@ -37,6 +38,12 @@ npm i
 
 ```sh
 npm start
+```
+
+## Update
+Should auto update but if not
+```sh
+npm run update
 ```
 
 Keep in mind that selfbots **are** against [Discords TOS](https://discord.com/terms).
