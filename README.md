@@ -46,6 +46,15 @@ Should auto update but if not
 npm run update
 ```
 
+## Show Cases
+
+# 1side
+https://user-images.githubusercontent.com/75359453/212401745-99bf28f6-fda2-4f21-bea7-23be1bac2449.mp4
+
+# msglogger
+https://user-images.githubusercontent.com/75359453/212401770-6f0f5d21-70c5-4018-8d4f-d8bc35b32d7e.mp4
+
+
 Keep in mind that selfbots **are** against [Discords TOS](https://discord.com/terms).
 
 **Thats it**
